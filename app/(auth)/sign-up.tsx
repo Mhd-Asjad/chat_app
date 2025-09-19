@@ -116,6 +116,7 @@ const SignUpScreen = () => {
                 Create an account to get started
                 </Text>
             </View>
+
             <View className="gap-3">
                 <TextField
                 value={firstName}
@@ -168,6 +169,7 @@ const SignUpScreen = () => {
                 onChangeText={onChangePassword}
                 />
             </View>
+
             <Button onPress={onSignUpPress}>Continue</Button>
             <View className="flex-row gap-[3px]">
                 <Text>Already have an account?</Text>
@@ -179,3 +181,5 @@ const SignUpScreen = () => {
         </Screen>
     )
 }
+
+export default SignUpScreen
