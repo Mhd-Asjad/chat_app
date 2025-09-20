@@ -113,12 +113,13 @@ const SignUpScreen = () => {
             <View className="gap-3">
                 <Text className="text-center text-3xl font-semibold">Sign up</Text>
                 <Text className="text-center text-base text-gray-500">
-                Create an account to get started
+                Create an account to get started..!
                 </Text>
             </View>
 
             <View className="gap-3">
                 <TextField
+                
                 value={firstName}
                 placeholder="First name"
                 onChangeText={onChangeFirstName}

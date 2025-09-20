@@ -52,7 +52,6 @@ const HomeLayout = () => {
         if (!chatClient.user) {
           await chatClient.connectUser(chatUser, customProvider);
         }
-
         setChatClient(chatClient);
       } catch (error) {
         console.error('Error setting up Stream:', error);
@@ -69,7 +68,7 @@ const HomeLayout = () => {
       }
     };
   }, [user, chatClient, isSignedIn, router]);
-
+  
   if (loading) return <ScreenLoading />;
 
   return (

@@ -1,34 +1,48 @@
-import clsx from 'clsx';
-import { DimensionValue, Text, TextInput, View } from 'react-native';
+import clsx from "clsx";
+import { DimensionValue, Text, TextInput, View } from "react-native";
 
 interface TextFieldProps extends React.ComponentProps<typeof TextInput> {
   width?: DimensionValue;
   label?: string;
+  error?: string; // optional error text
 }
 
 const TextField = ({
   label,
-  width = '100%',
+  width = "100%",
   className,
+  error,
   ...otherProps
 }: TextFieldProps) => {
   return (
-    <View
-      style={{ width }}
-      className="relative px-4 flex-row bg-white items-center justify-between rounded-xl py-3 android:py-0 border border-white"
-    >
+    <View style={{ width }} className="mb-4">
       {label && (
-        <View>
-          <Text className="w-[108px] font-medium">{label}</Text>
-        </View>
+        <Text className="mb-2 text-base font-semibold text-gray-700">
+          {label}
+        </Text>
       )}
-      <TextInput
+      <View
         className={clsx(
-          'flex-1 placeholder:text-gray-400 text-black',
-          className
+          "flex-row items-center rounded-2xl border px-4 py-3",
+          "bg-gray-50",
+          error ? "border-red-500" : "border-gray-300"
         )}
-        {...otherProps}
-      />
+      >
+        <TextInput
+          placeholderTextColor="#9CA3AF" // Tailwind gray-400
+          className={clsx(
+            "flex-1 text-base text-gray-900",
+            "placeholder:text-gray-400",
+            className
+          )}
+          {...otherProps}
+        />
+      </View>
+      {error && (
+        <Text className="mt-1 text-sm text-red-500">
+          {error}
+        </Text>
+      )}
     </View>
   );
 };
