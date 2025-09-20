@@ -81,6 +81,14 @@ const HomeLayout = () => {
               headerShown: false,
             }}
           />
+        <Stack.Screen
+          name="(modal)"
+          options={{
+            presentation: 'modal',
+            headerShown: false
+          }}
+        
+        />
         </Stack>
       </Chat>
     </OverlayProvider>

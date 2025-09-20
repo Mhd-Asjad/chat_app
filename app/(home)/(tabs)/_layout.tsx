@@ -19,7 +19,7 @@ const TabsLayout = () => {
         headerTitleAlign: 'center',
       }}
     >
-    
+
       <Tabs.Screen
         name="chats"
         options={{
@@ -38,6 +38,7 @@ const TabsLayout = () => {
           ),
         }}
       />
+      
       <Tabs.Screen
         name="stories"
         options={{
